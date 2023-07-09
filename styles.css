@@ -1,0 +1,33 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+}
+
+#calculator-body {
+    width: 320px;
+    height: 420px;
+    margin: 10% auto
+}
+
+.calculator-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.calculator-row button {
+    width: 80px;
+    height: 80px;
+}
+
+#btn-clear, #btn-del {
+    width: 160px;
+    height: 50px;
+}
+
+#calculator-dispaly {
+    width: 100%;
+    height: 50px;
+    background-color: aquamarine;
+    
+}
+
