@@ -4,8 +4,8 @@
 }
 
 #calculator-body {
-    width: 320px;
-    height: 420px;
+    width: 240px;
+    height: 310px;
     margin: 10% auto
 }
 
@@ -15,19 +15,31 @@
 }
 
 .calculator-row button {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 #btn-clear, #btn-del {
     width: 160px;
-    height: 50px;
+    height: 30px;
 }
 
 #calculator-dispaly {
     width: 100%;
     height: 50px;
     background-color: aquamarine;
-    
+    display: flex;
+    flex-direction: column;
+    text-align: right;
 }
 
+#previous {
+    font-size: 15px;
+    height: 16px;
+    margin: 2px;
+}
+
+#current {
+    font-size: 25px;
+    height: 26px;
+}
