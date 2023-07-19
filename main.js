@@ -2,11 +2,16 @@ let operator = '';
 let previousValue = '';
 let currentValue = '';
 
+window.addEventListener("keydown", handleKeyboard);
+
 const previousDisplayValue = document.querySelector("#previous");
 const currentDisplayValue = document.querySelector("#current");
 
 const clear = document.querySelector("#btn-clear");
 clear.addEventListener("click", clearDisplay);
+
+const deleteBtn = document.querySelector("#btn-del");
+deleteBtn.addEventListener("click", delLastNumber);
 
 const result = document.querySelector("#btn-result");
 result.addEventListener("click", () => {
@@ -16,6 +21,9 @@ result.addEventListener("click", () => {
 });
 
 const dot = document.querySelector("#btn-dot");
+dot.addEventListener("click", () => {
+    addDot();
+})
 
 const numberBtns = document.querySelectorAll(".numbers");
 const operators = document.querySelectorAll(".operators");
@@ -56,6 +64,28 @@ function handleOperator(op) {
         previousDisplayValue.textContent = previousValue + " " + operator;
     }
 }
+
+function handleKeyboard(e) {
+    e.preventDefault();
+    if (e.key >= 0 && e.key <= 9) {
+        handleNumber(e.key);
+      }
+    if(e.key === "Enter" || 
+    currentValue !="" && previousValue !="") {
+        calculate();
+    }
+    if(e.key === "+" || e.key === "-" || e.key === "/") {
+        handleOperator(e.key);
+    }
+    if(e.key === "x" || e.key === "*") {
+        handleOperator("x");
+    }
+    if(e.key === "." || e.key === ",") {
+        addDot();
+    }
+    if(e.key ==="Backspace") {
+        delLastNumber();
+    }}
 
 function calculate() {
     previousValue = Number(previousValue);
@@ -111,3 +141,23 @@ function clearDisplay() {
     currentValue = "";
     operator = "";
 }
+
+function addDot() {
+    if(!currentValue.includes(".")) {
+        currentValue += "."
+        currentDisplayValue.textContent = currentValue;
+    }
+}
+
+function delLastNumber() {
+    if(currentValue != "") {
+        currentValue = currentValue.slice(0,-1);
+        currentDisplayValue.textContent = currentValue;
+    }
+    if(currentValue === "") {
+        currentDisplayValue.textContent =  "0";
+    }}
+    if (currentValue === "" && previousValue !== "" && operator === "") {
+        previousValue = previousValue.slice(0,-1);
+        currentDisplayValue.textContent = previousValue;
+    }
