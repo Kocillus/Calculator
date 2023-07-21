@@ -3,20 +3,31 @@
     padding: 0; 
 }
 
+body {
+    background-color: rgb(248, 245, 81);
+}
+
 #calculator-body {
-    width: 240px;
-    height: 310px;
-    margin: 10% auto
+    width: 200px;
+    height: auto;
+    margin: 10% auto;
+    padding: 20px;
+    background-color: rgb(68, 68, 68);
+    border-radius: 20px;
 }
 
 .calculator-row {
     display: flex;
     flex-direction: row;
+    gap: 5px;
+    margin-bottom: 5px;
 }
 
 .calculator-row button {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    font-weight: 900;
+    font-size: 0.9rem;
 }
 
 #btn-clear, #btn-del {
@@ -24,22 +35,79 @@
     height: 30px;
 }
 
+.numbers {
+    background-color: transparent;
+    border: solid 2px rgb(233, 233, 233);
+    border-radius: 5px;
+    color: rgb(233, 233, 233);
+}
+
+.numbers:hover {
+    background-color: rgb(233, 233, 233);
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+}
+
+.operators {
+    background-color: transparent;
+    border: solid 2px rgb(253, 0, 84);
+    border-radius: 5px;
+    color: rgb(253, 0, 84);
+}
+
+.operators:hover {
+    background-color: rgb(253, 0, 84);
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+}
+
+#btn-result, #btn-dot {
+    background-color: transparent;
+    border: solid 2px rgb(253, 194, 0);
+    border-radius: 5px;
+    color: rgb(253, 194, 0);
+}
+
+#btn-result:hover, #btn-dot:hover {
+    background-color: rgb(253, 194, 0);
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+}
+
+#btn-del, #btn-clear {
+    background-color: transparent;
+    border: solid 2px rgb(243, 153, 236);
+    border-radius: 5px;
+    color: rgb(243, 153, 236);
+}
+
+#btn-del:hover, #btn-clear:hover {
+    background-color: rgb(243, 153, 236);
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+}
+
 #calculator-dispaly {
     width: 100%;
     height: 50px;
-    background-color: aquamarine;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     text-align: right;
+    margin-bottom: 5px;
 }
 
 #previous {
     font-size: 15px;
     height: 16px;
     margin: 2px;
+    color:rgb(80, 80, 80);
 }
 
 #current {
     font-size: 25px;
     height: 26px;
+    margin: 2px;
+    color:rgb(51, 51, 51);
 }

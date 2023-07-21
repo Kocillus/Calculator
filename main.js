@@ -39,7 +39,7 @@ function handleNumber(number) {
         previousValue = "";
         currentDisplayValue.textContent = currentValue;
     }
-    if (currentValue.length <= 6) {
+    if (currentValue.length <= 10) {
     currentValue += number;
     currentDisplayValue.textContent = currentValue;
     }
@@ -119,10 +119,10 @@ function operatorCheck(text) {
 }
 
 function displayResult() {
-    if (previousValue.length <= 6) {
+    if (previousValue.length <= 10) {
         currentDisplayValue.textContent = previousValue;
     } else {
-        currentDisplayValue.textContent = previousValue.slice(0,6) + "...";
+        currentDisplayValue.textContent = previousValue.slice(0,10) + "...";
     }
 
     previousDisplayValue.textContent = "";
